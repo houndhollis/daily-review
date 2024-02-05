@@ -2,32 +2,46 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+html {
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    letter-spacing: -0.35px;
+    line-height: 1.25;
+    color: var(--color-gray-900);
+}
+/* 마진 0 */
+h1, h2, h3, h4, h5, h6, p, button, input, fieldset {
+    margin: 0;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+a {
+    color: inherit;
+    text-decoration: none;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+textarea {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard Variable", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+button {
+    /* iOS에서 버튼 색상이 푸른색 */
+    color: inherit;
+    /* iOS에서 버튼 클릭할 때 하이라이트 제거 */
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* iOS에서 제출 버튼이 굵게 나옴 */
+button[type="submit"] {
+    /*font-weight: normal;*/
+}
+
+.container {
+    max-width: 768px;
+    margin: 0 auto;
 }
